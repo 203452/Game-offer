@@ -1,0 +1,9 @@
+.caja-registro{
+    box-shadow: 1rem 1rem 1rem #121212;
+    width: 35rem;
+    height: auto;
+    background-color: #202020;
+    padding: 1rem;
+    text-align: center;
+    margin-top: 5%;
+}
