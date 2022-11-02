@@ -10,18 +10,20 @@
 }
 
 .row{
-    margin: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 10%;
 }
 
 .caja-principal{
     height: 10rem;
     width: 20rem;
+    box-shadow: 3px 2px 22px 5px rgba(53, 229, 226, 0.18);
 }
 
 .categoria-principal{
     height: 100%;
     width: 100%;
-    
 }
 
 .column button{

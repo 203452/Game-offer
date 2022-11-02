@@ -1,11 +1,13 @@
 
 body{
-    
+    overflow-x:hidden;
+    overflow-y:auto;
     height: 80rem;
     background: linear-gradient(70deg, #121212, #202020);
     display: flex;
     justify-content: center;
     font-family: 'Open Sans', sans-serif;
+  
 }
 
 #fondo{
@@ -21,7 +23,7 @@ body{
     height: auto;
     background-color: #202020;
     padding: 2rem;
-    margin-top: 15%;
+    margin-top: 12%;
 }
 
 .ban{

@@ -1,4 +1,5 @@
 import '../assets/styles/login.css'
+import { useState } from "react";
 import {Link, useNavigate} from 'react-router-dom'
 <style>
   @import
@@ -6,11 +7,47 @@ import {Link, useNavigate} from 'react-router-dom'
 </style>;
 
 function Login() {
+    const [userName, setUserName] = useState("");
+    const [pass, setPass] = useState("");
+
+    const verificar = () => {
+        if(JSON.parse(localStorage.getItem(userName))==null){
+            return false;
+        }
+        else{
+            return true;
+        }
+        
+      }
+
     const navigate = useNavigate();
 
+    const handleUserName = (e) =>{
+        setUserName(e.target.value);
+    }
+
+    const handlePass = (e) => {
+        setPass(e.target.value);
+    }
+
     const handleSubmit = (e) =>{
+        let respuesta;
+        let cadena;
         e.preventDefault();
-        navigate("/principal");
+        respuesta=verificar();
+        if(respuesta){
+            cadena=JSON.parse(localStorage.getItem(userName));
+            if(pass.localeCompare(cadena.password)){
+                alert("contraseña incorrecta")
+            }
+            else{
+                navigate("principal");
+                console.log("logeado")
+            }
+        }
+        else{
+            alert("usuario no registrado")
+        }
     }
 
     return ( 
@@ -26,15 +63,19 @@ function Login() {
                   autoComplete="off"
                   name="user"
                   placeholder="*Escribe tu usuario"
+                  value={userName}
+                  onChange={handleUserName}
                 />
               </div>
 
               <div>
-                <label htmlFor="user">Contraaseña:</label>
+                <label htmlFor="user">Contraseña:</label>
                 <input
                   type="password"
                   name="pass"
                   placeholder="*Escribe tu contrasena"
+                  value={pass}
+                  onChange={handlePass}
                 />
               </div>
 
