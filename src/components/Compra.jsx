@@ -1,6 +1,9 @@
 import "../assets/styles/compra.css";
+import { useNavigate  } from "react-router-dom";
+import fotogta from "../assets/images/accion/gta.jpeg";
 
 function Compra() {
+    const navigate= useNavigate();
   const accion = {
     nombre: ["God of War", "GTA V"],
     precio: ["110", "300", "113"],
@@ -29,11 +32,11 @@ function Compra() {
 
           <div>
             <label htmlFor="">Cantidad:</label>
-            <input type="number" />
-            <button id="add">Agregar</button>
+            <input type="number" id="cantidad"/>
+            <button id="add" className="boton_compra">Agregar</button>
           </div>
 
-          <div>
+          <div className="tabla">
             <table>
               <thead>
                 <tr>
@@ -44,17 +47,23 @@ function Compra() {
                 </tr>
               </thead>
               <tbody id="nota"></tbody>
+              {/* <tr>
+                  <th>gta v</th>
+                  <th>12</th>
+                  <th>3</th>
+                  <th>123</th>
+                </tr> */}
               <tfoot>
                 <tr>
-                  <th colspan="3">SubTotal</th>
+                  <th colspan="3">SubTotal: </th>
                   <th id="sub"></th>
                 </tr>
                 <tr>
-                  <th colspan="3">IVA 16%</th>
+                  <th colspan="3">IVA 16%: </th>
                   <th id="iva"></th>
                 </tr>
                 <tr>
-                  <th colspan="3">Total</th>
+                  <th colspan="3">Total: </th>
                   <th id="total"></th>
                 </tr>
               </tfoot>
@@ -62,15 +71,28 @@ function Compra() {
           </div>
 
           <div>
-            <button>Comprar</button>
-            <button>Borrar</button>
+            <button id="buy" className="boton_compra">Comprar</button>
+            <button id="clear" className="boton_compra">Borrar</button>
+          </div>
+
+          <div>
+            <button id="back" className="boton_compra" onClick={() => window.location.reload()}>Back</button>
           </div>
         </div>
 
         <div className="compra_right">
-          <div className="info">
-            <div id="imagen"></div>
-            <div id="description"></div>
+          <div className="informacion">
+            <div id="imagen">
+                <img src={fotogta} alt="" />
+            </div>
+            <div id="description">
+                <h4>Nombre:</h4>
+                gta
+                <h4>Precio:</h4>
+                12
+                <h4>Descripción:</h4>
+                Grand Theft Auto V es un videojuego de acción-aventura de mundo abierto desarrollado por el estudio Rockstar North y distribuido por Rockstar Games.
+            </div>
           </div>
         </div>
       </div>
