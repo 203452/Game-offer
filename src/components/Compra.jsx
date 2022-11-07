@@ -35,7 +35,7 @@ function Compra() {
     aux= aux+total;
     iva=aux*0.16;
     setSub(aux);
-    setIva(iva)
+    setIva(iva.toFixed(2))
     setTotalAll(aux+iva);
   }
 
@@ -107,6 +107,7 @@ function Compra() {
             <input
               type="number"
               id="cantidad"
+              min={0}
               onChange={handleChangeCantidad}
             />
             <button id="add" className="boton_compra" onClick={agregarProducto}>
@@ -131,6 +132,7 @@ function Compra() {
                 cantidad={amount}
                 total={total}
               />
+
               <tfoot>
                 <tr>
                   <th colSpan="3">SubTotal: </th>
