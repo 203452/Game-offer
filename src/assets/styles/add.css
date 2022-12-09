@@ -1,0 +1,44 @@
+.container-add{
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1rem 1rem 1rem #121212;
+    width: 30rem;
+    height: auto;
+    background-color: #202020;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 12%;
+}
+
+.title-add{
+    color: #eaeaea;
+}
+
+#description-form-add{
+    padding-left: 1rem;
+    border: 1px solid #C3C3C3;
+    border-radius: 5px;
+    width: 20rem;
+    margin-bottom: 2rem;
+}
+
+#description-form-add{
+    border: 1px solid white;
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+    outline: none;
+}
+
+.opciones-add select{
+    padding-left: 1rem;
+    height: 2rem;
+    border: 1px solid #C3C3C3;
+    border-radius: 5px;
+    width: 21rem;
+    margin-bottom: 2rem;
+}
+.opciones-add:focus{
+    border: 1px solid white;
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+    outline: none;
+}

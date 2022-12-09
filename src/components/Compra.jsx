@@ -1,8 +1,10 @@
 import "../assets/styles/compra.css";
 import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Nota from "./Nota";
 
 function Compra() {
+  const navigate = useNavigate();
   const [data, setData] = useState([]);
   const [nombre, setNombre] = useState("");
   const [descripcion, setDescripcion] = useState("");
@@ -163,10 +165,14 @@ function Compra() {
             <button
               id="back"
               className="boton_compra"
-              onClick={() => window.location.reload()}
+              onClick={() => navigate("/")}
             >
               Back
             </button>
+            <Link to="/add" 
+            className="boton_compra">
+              + agregar juego a la tienda
+            </Link>
           </div>
         </div>
 

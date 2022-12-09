@@ -41,7 +41,7 @@ function Login() {
                 alert("contraseña incorrecta")
             }
             else{
-                navigate("principal");
+                navigate("compra");
                 console.log("logeado")
             }
         }

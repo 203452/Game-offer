@@ -3,11 +3,22 @@ import Compra from './Compra'
 import {useState} from 'react';
 
 function Principal() {
+    const [cat, setCat] = useState('');
     const [opcion, setOpcion] = useState(1);
-    const handleAccion = (e) =>{
+    
+    const handleAventura = () =>{
         setOpcion(2);
-
+        setCat('aventura');
     }
+    const handleAccion = () =>{
+        setOpcion(3);
+        setCat('accion');
+    }
+    const handleArcade = () =>{
+        setOpcion(4);
+        setCat('arcade');
+    }
+
 
     switch(opcion){
         case 1:
@@ -16,35 +27,7 @@ function Principal() {
                     <div className="column">
                         <div className="row row-1">
                             <div className="caja-principal">
-                                <button onClick={handleAccion} className='categoria-principal'>Aventura</button>
-                            </div>
-                        </div>
-                        <div className="row row-2">
-                        <div className="caja-principal">
-                                <button className='categoria-principal'>Deportes</button>
-                        </div>
-                        </div>
-                        <div className="row row-3">
-                        <div className="caja-principal">
-                            <button className='categoria-principal'>Juegos de mesa</button>
-                        </div>
-                        </div>
-                    </div>
-        
-                    <div className="column">
-                        <div className="row row-1">
-                            <div className="caja-principal">
-                                <button className='categoria-principal'>Acción</button>
-                            </div>
-                        </div>
-                        <div className="row row-2">
-                            <div className="caja-principal">
-                                <button className='categoria-principal'>Estrategia</button>
-                            </div>
-                        </div>
-                        <div className="row row-3">
-                            <div className="caja-principal">
-                                <button className='categoria-principal'>Juegos musicales </button>
+                                <button onClick={handleAventura} type="submit" className='categoria-principal'>Aventura</button>
                             </div>
                         </div>
                     </div>
@@ -52,19 +35,19 @@ function Principal() {
                     <div className="column">
                         <div className="row row-1">
                             <div className="caja-principal">
-                                <button className='categoria-principal'>Arcade</button>
+                                <button onClick={handleAccion} className='categoria-principal'>Acción</button>
                             </div>
                         </div>
-                        <div className="row row-2">
+
+                    </div>
+        
+                    <div className="column">
+                        <div className="row row-1">
                             <div className="caja-principal">
-                                <button className='categoria-principal'>Simulación</button>
+                                <button onClick={handleArcade} className='categoria-principal'>Arcade</button>
                             </div>
                         </div>
-                        <div className="row row-3">
-                            <div className="caja-principal">
-                                <button className='categoria-principal'>Juegos de dibujo</button>
-                            </div>
-                        </div>
+             
                     </div>
         
                 </div>
@@ -72,7 +55,23 @@ function Principal() {
         break;
         case 2:
             return(
-                <Compra></Compra>
+                <Compra
+                    categoria={cat}
+                />
+            );
+        break;
+        case 3:
+            return(
+                <Compra
+                    categoria={cat}
+                />
+            );
+        break;
+        case 4:
+            return(
+                <Compra
+                    categoria={cat}
+                />
             );
         break;
     }
