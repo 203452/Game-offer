@@ -1,14 +1,11 @@
 .container-add{
     border-radius: 8px;
-    display: flex;
-    flex-direction: column;
     box-shadow: 1rem 1rem 1rem #121212;
     width: 30rem;
     height: auto;
     background-color: #202020;
     padding: 2rem;
     text-align: center;
-    margin-top: 12%;
 }
 
 .title-add{

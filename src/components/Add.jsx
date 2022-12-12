@@ -41,7 +41,7 @@ function Add() {
 }
 
   return (
-    <div>
+    <div className="main">
       <div className="container-add">
         <div className="title-add">
           <h3>+ Agregar juego</h3>
